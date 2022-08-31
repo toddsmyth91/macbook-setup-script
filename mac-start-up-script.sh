@@ -64,7 +64,11 @@ echo -e "${GREEN}BREW - Installing Sublime Text${NC}"
 # not required based on the homebrew install version
 # echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.bash_profile
 # install packages used for sublime text
-subl --command "advanced_install_package {\"packages\": \"Emmet, HTMLBeautify\"}"
+# subl --command "advanced_install_package {\"packages\": \"Emmet, HTMLBeautify\"}"
+
+echo -e "${GREEN}BREW - Homebrew cask fonts${NC}"
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 
 echo -e "${NEXT}VIM - Installing Pathogen${NC}"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -93,15 +97,20 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0' >> "$HOME/.vimrc" 
+let g:syntastic_check_on_wq = 0
+set encoding=utf8' >> "$HOME/.vimrc" 
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 echo "let g:airline_theme='simple'" >> "$HOME/.vimrc"
-# Currently issue with not finding solarized once complete - need to investigate
-#git clone git://github.com/altercation/vim-colors-solarized.git
-#mv vim-colors-solarized ~/.vim/bundle/
-#echo 'set background=dark
-#colorscheme solarized' >> "$HOME/.vimrc"
+git clone https://github.com/ryanoasis/vim-devicons.git ~/.vim/bundle/vim-devicons
+set guifont=DroidSansMono_Nerd_Font:h11
+let g:airline_powerline_fonts = 1
+
+echo -e "${NEXT}VIM - Installing monokai colourscheme${NC}"
+git clone https://github.com/sickill/vim-monokai.git
+mv vim-monokai/colors ~/.vim/colors 
+echo "syntax enable
+colorscheme monokai" >> .vimrc
 
 << VIM-COMMENT
 echo -e "${NEXT}VIM - Install YouCompleteMe"
