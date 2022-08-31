@@ -56,13 +56,15 @@ echo -e "${GREEN}BREW - Installing OBS${NC}"
 brew install --cask obs
 
 echo -e "${GREEN}BREW - Installing Visual Studio Code${NC}"
-brew install --cask visual-studio-code
+# brew install --cask visual-studio-code
 
 echo -e "${GREEN}BREW - Installing Sublime Text${NC}"
-brew install --cask sublime-text
+# brew install --cask sublime-text
 # add sublime text to path - https://www.sublimetext.com/docs/command_line.html#mac 
 # not required based on the homebrew install version
 # echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.bash_profile
+# install packages used for sublime text
+subl --command "advanced_install_package {\"packages\": \"Emmet, HTMLBeautify\"}"
 
 echo -e "${NEXT}VIM - Installing Pathogen${NC}"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -75,7 +77,7 @@ set wrap
 filetype plugin indent on' >> "$HOME/.vimrc" 
 
 # Might not end up using VIM so commenting out for now
-<< VIM-COMMENT
+# << VIM-COMMENT
 # Collection of plugins below from: https://www.dunebook.com/best-vim-plugins/ 
 
 echo -e "${NEXT}VIM - Installing sensible.vim, prettier, syntastic, airline and solarized theme${NC}"
@@ -101,6 +103,7 @@ echo "let g:airline_theme='simple'" >> "$HOME/.vimrc"
 #echo 'set background=dark
 #colorscheme solarized' >> "$HOME/.vimrc"
 
+<< VIM-COMMENT
 echo -e "${NEXT}VIM - Install YouCompleteMe"
 brew install cmake python go
 cd ~/.vim/bundle/YouCompleteMe
