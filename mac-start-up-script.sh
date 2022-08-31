@@ -60,6 +60,9 @@ brew install --cask visual-studio-code
 
 echo -e "${GREEN}BREW - Installing Sublime Text${NC}"
 brew install --cask sublime-text
+# add sublime text to path - https://www.sublimetext.com/docs/command_line.html#mac 
+# not required based on the homebrew install version
+# echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.bash_profile
 
 echo -e "${NEXT}VIM - Installing Pathogen${NC}"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
