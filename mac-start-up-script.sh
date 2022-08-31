@@ -102,15 +102,16 @@ set encoding=utf8' >> "$HOME/.vimrc"
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes
 echo "let g:airline_theme='simple'" >> "$HOME/.vimrc"
-git clone https://github.com/ryanoasis/vim-devicons.git ~/.vim/bundle/vim-devicons
-set guifont=DroidSansMono_Nerd_Font:h11
-let g:airline_powerline_fonts = 1
+# git clone https://github.com/ryanoasis/vim-devicons.git ~/.vim/bundle/vim-devicons
 
 echo -e "${NEXT}VIM - Installing monokai colourscheme${NC}"
-git clone https://github.com/sickill/vim-monokai.git
-mv vim-monokai/colors ~/.vim/colors 
+git clone https://github.com/sonph/onehalf.git  
+mkdir ~/.vim/colors
+mv onehalf/vim/colors/onehalfdark.vim  ~/.vim/colors
 echo "syntax enable
-colorscheme monokai" >> .vimrc
+set t_Co=256
+set cursorline
+colorscheme onehalfdark" >> "${HOME}/.vimrc"
 
 << VIM-COMMENT
 echo -e "${NEXT}VIM - Install YouCompleteMe"
