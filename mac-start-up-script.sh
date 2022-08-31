@@ -58,6 +58,9 @@ brew install --cask obs
 echo -e "${GREEN}BREW - Installing Visual Studio Code${NC}"
 brew install --cask visual-studio-code
 
+echo -e "${GREEN}BREW - Installing Sublime Text${NC}"
+brew install --cask sublime-text
+
 echo -e "${NEXT}VIM - Installing Pathogen${NC}"
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
