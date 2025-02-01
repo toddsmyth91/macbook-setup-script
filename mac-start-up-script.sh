@@ -51,6 +51,9 @@ brew install --cask affinity-designer
 echo -e "${GREEN}BREW - Installing Spotify${NC}"
 brew install --cask spotify
 
+echo -e "${GREEN}BREW - Installing Rectangle${NC}"
+brew install --cask rectangle
+
 # https://obsproject.com/
 echo -e "${GREEN}BREW - Installing OBS${NC}"
 brew install --cask obs
@@ -126,7 +129,7 @@ git clone --depth=1 https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/pack/plugin
 VIM-COMMENT
 
 echo -e "${PURPLE}MAC - Set default browser to Chrome${NC}"
-open -a "Google Chrome" --args --make-default-browser
+open -a "Brave Browser" --args --make-default-browser
 
 # Read this - updating preferences on MAC
 # https://www.shell-tips.com/mac/defaults/#gsc.tab=0
